@@ -1,4 +1,4 @@
-# Inventory Management System
+# Invaac(Inventory Management System)
 
 A full-stack inventory app with JWT authentication and role-based access control. Anyone can browse products and categories. Only admins can create, edit, or delete them.
 
