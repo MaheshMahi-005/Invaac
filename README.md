@@ -117,10 +117,3 @@ Log out and back in so the new role is picked up.
 | POST / PUT / DELETE | `/categories/...` | Admin |
 
 `GET /products/` returns `{ "total": <int>, "items": [...] }`.
-
-## Roadmap
-
-- Product image upload
-- Dark mode
-- Mock checkout flow
-- Deployment
