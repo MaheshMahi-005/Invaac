@@ -70,7 +70,6 @@ button {
   background: var(--primary);
   color: #fff;
   cursor: pointer;
-  margin-right: 0.4rem;
 }
 button:hover:not(:disabled) {
   background: var(--primary-hover);
@@ -92,6 +91,27 @@ button.secondary {
 }
 button.secondary:hover:not(:disabled) {
   background: var(--bg);
+}
+
+.actions{
+  display:flex;
+  gap:0.5rem;
+}
+
+.inline-form{
+  display:flex;
+  align-items: center;
+  gap:0.5rem;
+  margin-bottom: 1rem;
+}
+
+.inline-form input{
+  flex:0 1 300px;
+}
+
+.card input,
+.card select{
+  max-width: 100%;
 }
 
 /* Forms */

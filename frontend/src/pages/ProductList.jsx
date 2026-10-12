@@ -81,8 +81,10 @@ export default function ProductList(){
                             <td>{p.category.name}</td>
                             {isAdmin && (
                                 <td>
-                                    <button onClick={()=>navigate(`/edit-product/${p.id}`)}>Edit</button>
-                                    <button className="danger" onClick={()=>handleDelete(p.id,p.name)}>Delete</button>
+                                    <div className="actions">
+                                        <button onClick={()=>navigate(`/edit-product/${p.id}`)}>Edit</button>
+                                        <button className="danger" onClick={()=>handleDelete(p.id,p.name)}>Delete</button>
+                                    </div>
                                 </td>
                             )}
                         </tr>

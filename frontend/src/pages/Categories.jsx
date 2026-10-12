@@ -27,7 +27,7 @@ export default function Categories(){
         loadCategories();
     },[]);
 
-    async function handleAuth(e){
+    async function handleAdd(e){
         e.preventDefault();
         setError('');
         setSubmitting(true);
@@ -80,7 +80,7 @@ export default function Categories(){
         <div>
             <h2>Categories</h2>
             {isAdmin && (
-                <form onSubmit={handleAuth} style={{marginBottom:'1rem'}}>
+                <form onSubmit={handleAdd} className="inline-form">
                     <input type="text" placeholder="New Category Name" value={newName} onChange={(e)=>setNewName(e.target.value)} required/>
                     <button type="submit" disabled={submitting}>
                         {submitting ? 'Adding...' : 'Add Category'}
@@ -110,17 +110,19 @@ export default function Categories(){
                                 </td>
                                 {isAdmin && (
                                     <td>
-                                        {editingId === c.id ?(
-                                            <>
-                                                <button onClick={handleSaveEdit(c.id)}>Save</button>
-                                                <button className="secondary" onClick={cancelEdit}>Cancel</button>
-                                            </>
-                                        ):(
-                                            <>
-                                                <button onClick={()=>startEdit(c)}>Edit</button>
-                                                <button className="danger" onClick={()=>handleDelete(c.id,c.name)}>Delete</button>
-                                            </>
-                                        )}
+                                        <div className="actions">
+                                            {editingId === c.id ?(
+                                                <>
+                                                    <button onClick={()=>handleSaveEdit(c.id)}>Save</button>
+                                                    <button className="secondary" onClick={cancelEdit}>Cancel</button>
+                                                </>
+                                            ):(
+                                                <>
+                                                    <button onClick={()=>startEdit(c)}>Edit</button>
+                                                    <button className="danger" onClick={()=>handleDelete(c.id,c.name)}>Delete</button>
+                                                </>
+                                            )}
+                                        </div>
                                     </td>
                                 )}
                             </tr>
