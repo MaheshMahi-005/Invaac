@@ -13,23 +13,25 @@ function App() {
     return (
         <>
             <Navbar/>
-            <Routes>
-                <Route path='/login' element={<Login/>}></Route>
-                <Route path='/register' element={<Register/>}></Route>
-                <Route path='/' element={<ProductList/>}></Route>
-                <Route path='/add-product' element={
-                    <ProtectedRoute adminOnly={true}>
-                        <AddProduct/>
-                    </ProtectedRoute>
-                }></Route>
-                <Route path='/edit-product/:id' element={
-                    <ProtectedRoute adminOnly={true}>
-                        <EditProduct/>
-                    </ProtectedRoute>
-                }>
-                </Route>
-                <Route path='/categories' element={<Categories/>}></Route>
-            </Routes>
+            <main className='container'>
+                <Routes>
+                    <Route path='/login' element={<Login/>}></Route>
+                    <Route path='/register' element={<Register/>}></Route>
+                    <Route path='/' element={<ProductList/>}></Route>
+                    <Route path='/add-product' element={
+                        <ProtectedRoute adminOnly={true}>
+                            <AddProduct/>
+                        </ProtectedRoute>
+                    }></Route>
+                    <Route path='/edit-product/:id' element={
+                        <ProtectedRoute adminOnly={true}>
+                            <EditProduct/>
+                        </ProtectedRoute>
+                    }>
+                    </Route>
+                    <Route path='/categories' element={<Categories/>}></Route>
+                </Routes>
+            </main>
         </>
     )
 }
