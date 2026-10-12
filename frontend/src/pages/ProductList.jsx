@@ -58,12 +58,11 @@ export default function ProductList(){
             onChange={(e) => setSearch(e.target.value)}/>
 
             {loading && <p>Loading Products.....</p>}
-            {!loading && error && <p style={{color:'red'}}>{error}</p>}
+            {!loading && error && <p className="error">{error}</p>}
             {!loading && !error && products.length === 0 && <p>No Products found</p>}
 
             {!loading && !error && products.length > 0 && 
-            (<table border='1' cellPadding='8' 
-            style={{borderCollapse:'collapse',marginTop:'1rem'}}>
+            (<table>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -83,7 +82,7 @@ export default function ProductList(){
                             {isAdmin && (
                                 <td>
                                     <button onClick={()=>navigate(`/edit-product/${p.id}`)}>Edit</button>
-                                    <button onClick={()=>handleDelete(p.id,p.name)}>Delete</button>
+                                    <button className="danger" onClick={()=>handleDelete(p.id,p.name)}>Delete</button>
                                 </td>
                             )}
                         </tr>
@@ -92,7 +91,7 @@ export default function ProductList(){
             </table>)}
 
             {!loading && !error && total>0 &&(
-                <div style={{marginTop:'1rem',display:'flex',gap:'1rem',alignItems:'center'}}>
+                <div className="pagination">
                     <button onClick={()=>setPage((p)=>Math.max(0,p-1))} disabled={page === 0}>Previous</button>
                     <span>{page+1} of {totalPages}</span>
                     <button onClick={()=> setPage((p)=> p+1)}

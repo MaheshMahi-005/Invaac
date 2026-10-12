@@ -27,7 +27,7 @@ export default function Login(){
     }
 
     return (
-        <div>
+        <div className="card">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <div>

@@ -88,12 +88,12 @@ export default function Categories(){
                 </form>
             )}
 
-            {error && <p style={{color:'red'}}>{error}</p>}
+            {error && <p className="error">{error}</p>}
             {loading && <p>Loading categories...</p>}
-            {!loading && Categories.length===0&&<p>No categories found</p>}
+            {!loading && categories.length===0&&<p>No categories found</p>}
 
             {!loading && categories.length>0 && (
-                <table border='1' cellPadding='8' style={{borderCollapse:'collapse'}}>
+                <table>
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -113,12 +113,12 @@ export default function Categories(){
                                         {editingId === c.id ?(
                                             <>
                                                 <button onClick={handleSaveEdit(c.id)}>Save</button>
-                                                <button onClick={cancelEdit}>Cancel</button>
+                                                <button className="secondary" onClick={cancelEdit}>Cancel</button>
                                             </>
                                         ):(
                                             <>
                                                 <button onClick={()=>startEdit(c)}>Edit</button>
-                                                <button onClick={()=>handleDelete(c.id,c.name)}>Delete</button>
+                                                <button className="danger" onClick={()=>handleDelete(c.id,c.name)}>Delete</button>
                                             </>
                                         )}
                                     </td>

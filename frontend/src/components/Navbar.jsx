@@ -9,14 +9,15 @@ export default function Navbar(){
         navigate('/login');
     }
     return (
-        <nav style={{display:'flex',gap:'1rem',padding:'1rem',borderBottom:'1px solid hsl(0, 63%, 46%)'}}>
+        <nav className='navbar'>
             <Link to='/'>Home</Link>
-            {!isAuthenticated && <Link to='/login'>Login</Link>}
-            {!isAuthenticated && <Link to='/register'>Register</Link>}
             {isAdmin && <Link to='/categories'>Categories</Link>}
             {isAdmin && <Link to='/add-product'>Add Product</Link>}
-            {isAuthenticated && <span>Hello,{user.username} {isAdmin && '(admin)'}</span>}
-            {isAuthenticated && <span><button onClick={handleLogout}>Logout</button></span>}
+            <span className='spacer'/>
+            {!isAuthenticated && <Link to='/login'>Login</Link>}
+            {!isAuthenticated && <Link to='/register'>Register</Link>}
+            {isAuthenticated && <span className='user'>Hello,{user.username} {isAdmin && '(admin)'}</span>}
+            {isAuthenticated && <span><button className='secondary' onClick={handleLogout}>Logout</button></span>}
         </nav>
     );
 }

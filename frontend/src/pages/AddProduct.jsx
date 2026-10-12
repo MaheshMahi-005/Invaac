@@ -50,7 +50,7 @@ export default function AddProduct(){
     }
 
     return(
-        <div>
+        <div className="card">
             <h2>Add product</h2>
             <form onSubmit={handleSubmit}>
                 <div>

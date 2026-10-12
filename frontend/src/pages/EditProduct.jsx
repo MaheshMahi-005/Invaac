@@ -59,7 +59,7 @@ export default function EditProduct(){
     if(!form) return <p>Loading....</p>;
 
     return (
-        <div>
+        <div className="card">
             <h2>Edit Product</h2>
             <form onSubmit={handleSubmit}>
                 <div>
