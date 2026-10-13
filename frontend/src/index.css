@@ -4,8 +4,8 @@
   --text: #1f2937;
   --text-muted: #6b7280;
   --border: #e5e7eb;
-  --primary: hsla(243, 87%, 56%, 0.836);
-  --primary-hover: hsla(245, 58%, 51%, 0.699);
+  --primary: hsl(243, 48%, 54%);
+  --primary-hover: hsla(244, 59%, 33%, 0.781);
   --danger: #dc2626;
   --danger-hover: #b91c1c;
   --radius: 8px;
@@ -29,16 +29,13 @@ h2 {
 }
 
 a {
-  color: var(--primary);
+  
   text-decoration: none;
   color: black;
   padding: 5px;
 }
 a:hover {
-  text-decoration: none;
-  background-color: hsla(240, 73%, 56%, 0.575);
-  border-radius: 10px;
-  padding: 5px;
+ text-decoration: underline;
 }
 
 /* Layout */
@@ -64,6 +61,22 @@ a:hover {
 .navbar .user {
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.navbar a{
+  text-decoration: none;
+  background-color: white;
+  border-radius: 15px;
+  padding: 8px;
+  transition:linear 0.5s;
+}
+
+.navbar a:hover{
+  text-decoration: none;
+  background-color: hsla(86, 73%, 56%, 0.473);
+  border-radius: 15px;
+  padding: 8px;
+  transition:linear 0.5s;
 }
 
 /* Buttons */
