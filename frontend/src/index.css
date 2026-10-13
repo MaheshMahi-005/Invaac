@@ -4,8 +4,8 @@
   --text: #1f2937;
   --text-muted: #6b7280;
   --border: #e5e7eb;
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
+  --primary: hsla(243, 87%, 56%, 0.836);
+  --primary-hover: hsla(245, 58%, 51%, 0.699);
   --danger: #dc2626;
   --danger-hover: #b91c1c;
   --radius: 8px;
@@ -31,9 +31,14 @@ h2 {
 a {
   color: var(--primary);
   text-decoration: none;
+  color: black;
+  padding: 5px;
 }
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background-color: hsla(240, 73%, 56%, 0.575);
+  border-radius: 10px;
+  padding: 5px;
 }
 
 /* Layout */
