@@ -77,7 +77,7 @@ export default function Categories(){
     }
 
     return (
-        <div>
+        <div className="narrow">
             <h2>Categories</h2>
             {isAdmin && (
                 <form onSubmit={handleAdd} className="inline-form">

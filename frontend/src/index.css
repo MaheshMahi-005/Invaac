@@ -159,7 +159,7 @@ select:focus {
   outline-offset: 1px;
 }
 
-/* Form pages sit on a card */
+/* Form pages */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -167,8 +167,12 @@ select:focus {
   box-shadow: var(--shadow);
   padding: 1.5rem;
   max-width: 480px;
+  margin:2rem auto;
 }
-
+.narrow{
+  max-width: 600px;
+  margin:0 auto;
+}
 /* Tables */
 table {
   width: 100%;
