@@ -10,14 +10,18 @@ export default function Navbar(){
     }
     return (
         <nav className='navbar'>
-            {isAuthenticated && <span className='user'>{user.username} {isAdmin && '(admin)'}</span>}
-            <Link to='/'>Home</Link>
-            {isAdmin && <Link to='/categories'>Categories</Link>}
-            {isAdmin && <Link to='/add-product'>Add Product</Link>}
-            <span className='spacer'/>
-            {!isAuthenticated && <Link to='/login'>Login</Link>}
-            {!isAuthenticated && <Link to='/register'>Register</Link>}
-            {isAuthenticated && <span><button className='secondary' onClick={handleLogout}>Logout</button></span>}
+            <span className='brand'>Invaac</span>
+            <div className='nav-links'>
+                <Link to='/'>Home</Link>
+                {isAdmin && <Link to='/categories'>Categories</Link>}
+                {isAdmin && <Link to='/add-product'>Add Product</Link>}
+            </div>
+            <div className='nav-auth'>
+                {!isAuthenticated && <Link to='/login'>Login</Link>}
+                {!isAuthenticated && <Link to='/register'>Register</Link>}
+                {isAuthenticated && <span className='user'>{user.username} {isAdmin && '(admin)'}</span>}
+                {isAuthenticated && <button className='secondary' onClick={handleLogout}>Logout</button>}
+            </div>
         </nav>
     );
 }
